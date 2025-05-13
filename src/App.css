@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+.App-dark {
+  background-color: black;
+  color: white;
+}
+
+.App-light {
+  background-color: rgb(216, 216, 216);
+  color: black;
+}
+
+.App {
+  min-height: 100vh; /* Full viewport height */
+  transition: background-color 0.3s ease; /* Optional: smooth background change */
+}

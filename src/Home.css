@@ -1,0 +1,14 @@
+.Home-dark {
+  background-color: black;
+  color: white;
+}
+
+.Home-light {
+  background-color: rgb(216, 216, 216);
+  color: black;
+}
+
+.Home {
+  min-height: 100vh; /* Full viewport height */
+  transition: background-color 0.3s ease; /* Optional: smooth background change */
+}
