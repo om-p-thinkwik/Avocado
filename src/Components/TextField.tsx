@@ -15,7 +15,7 @@ type InputTypes =
   | 'time'
   | 'color';
 
-interface OTextFieldProps {
+interface TextFieldProps {
   id?: string;
   name?: string;
   type?: InputTypes;
@@ -28,7 +28,7 @@ interface OTextFieldProps {
   autoFocus?: boolean;
 }
 
-const TextField: FC<OTextFieldProps> = ({
+const TextField: FC<TextFieldProps> = ({
   id = '',
   name = '',
   type = 'text',

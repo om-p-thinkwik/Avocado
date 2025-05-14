@@ -1,7 +1,11 @@
-import { useState } from 'react';
-import OTextField from './OTextField';
+import { useState, type FC } from 'react';
+import OTextField from './TextField';
 
-const Form = () => {
+interface FormProps {
+  className: string;
+}
+
+const Form: FC<FormProps> = ({ className = '' }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -20,7 +24,7 @@ const Form = () => {
   const staticTextFieldClassname = 'w-full text-gray-800 bg-[#f1f5f9] focus:ring-gray-500';
 
   return (
-    <div className="max-w-xl mx-auto mt-20 p-6 bg-white shadow-md/50 rounded-lg">
+    <div className={`max-w-xl mx-auto mt-20 p-6 shadow-md/50 rounded-lg ${className}`}>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -128,7 +132,7 @@ const Form = () => {
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-800 hover:cursor-pointer transition"
         >
           Submit
         </button>

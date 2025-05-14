@@ -39,6 +39,7 @@ This project is a growing set of reusable React components made to make frontend
 - Material UI: https://mui.com/material-ui/getting-started/
 - Prettier: https://prettier.io/docs/
 - ESLint: https://eslint.org/docs/latest/use/getting-started
+- Tailwind heroicons :https://heroicons.com/solid
 
 ## Cloning and Running the Application in local
 

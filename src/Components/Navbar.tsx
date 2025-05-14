@@ -7,9 +7,10 @@ interface NavbarProps {
   name: string;
   logoUrl: string;
   className?: string;
+  buttonsList?: string[];
 }
 
-const Navbar: FC<NavbarProps> = ({ name = '', logoUrl = '', className = '' }) => {
+const Navbar: FC<NavbarProps> = ({ name = '', logoUrl = '', className = '', buttonsList = [] }) => {
   const darkModeContext = useContext(DarkModeContext);
 
   return (
@@ -20,9 +21,19 @@ const Navbar: FC<NavbarProps> = ({ name = '', logoUrl = '', className = '' }) =>
         <img src={logoUrl} alt="Logo" className="h-10 w-10 rounded-full" />
         <h2 className="text-xl font-semibold">{name}</h2>
       </div>
-      <button className="justify-self-end" onClick={() => darkModeContext?.toggleDarkMode()}>
-        {darkModeContext?.darkMode ? <LightModeIcon /> : <DarkModeIcon />}
-      </button>
+      <div>
+        {buttonsList.map((item) => (
+          <button className="hover:cursor-pointer shadow-md/40 p-2" key={item}>
+            {item}
+          </button>
+        ))}
+        <button
+          className="ml-3 hover:cursor-pointer"
+          onClick={() => darkModeContext?.toggleDarkMode()}
+        >
+          {darkModeContext?.darkMode ? <LightModeIcon /> : <DarkModeIcon />}
+        </button>
+      </div>
     </div>
   );
 };
