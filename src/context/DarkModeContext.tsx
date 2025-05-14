@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, type PropsWithChildren } from 'react';
 
 export interface DarkModeContextTypes {
   darkMode: boolean;
@@ -6,7 +6,7 @@ export interface DarkModeContextTypes {
 }
 
 const DarkModeContext = createContext<DarkModeContextTypes | null>(null);
-function DarkModeProvider(props: any) {
+function DarkModeProvider(props: PropsWithChildren) {
   const [darkMode, setDarkMode] = useState<boolean>(false);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
